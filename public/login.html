@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login de Usuário</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="loginPassword">Senha:</label>
+                <input type="password" id="loginPassword" name="password" required>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+        
+        <p>Não tem uma conta? <a href="register.html">Cadastre-se aqui</a></p>
+
+        <p id="loginMessage" class="message"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const messageElement = document.getElementById('loginMessage');
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    messageElement.textContent = data.message;
+                    messageElement.style.color = 'green';
+                } else {
+                    messageElement.textContent = `Erro: ${data.message}`;
+                    messageElement.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error ao enviar requisição de login:', error);
+                messageElement.textContent = 'Erro ao conectar com o servidor.';
+                messageElement.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

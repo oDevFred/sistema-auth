@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containier">
+        <h2>Cadastro de Usuários</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <label for="registerUsername">Nome de Usuário:</label>
+                <input type="text" id="registerUsername" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="registerEmail">Email:</label>
+                <input type="email" id="registerEmail" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="registerPassword">Senha:</label>
+                <input type="password" id="registerPassword" name="password" required>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
+
+        <p id="registerMessage" class="message"></p>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const username = document.getElementById('registerUsername').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const messageElement = document.getElementById('registerMessage');
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    messageElement.textContent = data.message;
+                    messageElement.style.color = 'green';
+                    document.getElementById('registerForm').reset(); // Limpa o formulário
+                } else {
+                    messageElement.textContent = `Erro: ${data.message}`;
+                    messageElement.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Erro ao enviar requisição de registro:', error);
+                messageElement.textContent = 'Erro ao conectar com o servidor.';
+                messageElement.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
