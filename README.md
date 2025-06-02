@@ -64,7 +64,7 @@ Este manual fornece instruções passo a passo para utilizar o sistema de cadast
 > O código-fonte completo do projeto, incluindo o frontend (HTML, CSS, JavaScript), o backend (Node.js/Express) e as configurações de banco de dados, está versionado no GitHub.
 >
 > **Link para o Repositório GitHub:**
-> [https://github.com/oDevFred/sistema-auth](https://github.com/oDevFred/sistema-auth)
+> [SistemaAuth](https://github.com/oDevFred/sistema-auth)
 >
 > **Estrutura do Banco de Dados (Script SQL):**
 > As tabelas `users` e `profiles` foram criadas no MySQL com base no seguinte script SQL:
