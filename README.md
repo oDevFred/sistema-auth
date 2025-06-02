@@ -374,4 +374,4 @@ app.post('/login', async (req, res) => {
 
 > Este projeto permitiu aplicar conhecimentos em desenvolvimento web full-stack, desde a configuração do ambiente, modelagem de banco de dados, desenvolvimento de APIs REST com Node.js e Express, até a criação de interfaces de usuário com HTML, CSS e JavaScript. A implementação da segurança de senhas com `bcrypt` reforça a importância das boas práticas em desenvolvimento de software.
 
-> Você pode encontrar esse README no formato de PDF [aqui](https://drive.google.com/file/d/1YrJvcaFn1GmD6z2M5CPLrxcPVOZvaGw8/view?usp=sharing).
+> Você pode encontrar esse README no formato de PDF [aqui](https://drive.google.com/file/d/1ZZRCxXlh1o19xRpRLFoTHMN5SEpAHmjd/view?usp=sharing).
