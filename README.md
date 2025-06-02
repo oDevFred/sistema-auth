@@ -65,8 +65,7 @@ Este manual fornece instruções passo a passo para utilizar o sistema de cadast
 
 > O código-fonte completo do projeto, incluindo o frontend (HTML, CSS, JavaScript), o backend (Node.js/Express) e as configurações de banco de dados, está versionado no GitHub.
 >
-> **Link para o Repositório GitHub:**
-> [SistemaAuth](https://github.com/oDevFred/sistema-auth)
+> **Link para o Repositório GitHub:** [Sistema Auth](https://github.com/oDevFred/sistema-auth)
 >
 > **Estrutura do Banco de Dados (Script SQL):**
 > As tabelas `users` e `profiles` foram criadas no MySQL com base no seguinte script SQL:
@@ -75,29 +74,32 @@ Este manual fornece instruções passo a passo para utilizar o sistema de cadast
 > -- Criar o banco de dados (se ainda não existir)
 > CREATE DATABASE IF NOT EXISTS nodejs_auth_db;
 > ```
-
-> \-- Usar o banco de dados recém-criado
-> USE nodejs\_auth\_db;
-
-> \-- Tabela de usuários (users)
-> CREATE TABLE IF NOT EXISTS users (
-> id INT AUTO\_INCREMENT PRIMARY KEY,
-> username VARCHAR(255) NOT NULL UNIQUE,
-> password VARCHAR(255) NOT NULL,
-> email VARCHAR(255) NOT NULL UNIQUE,
-> telefone VARCHAR(100),
-> created\_at TIMESTAMP DEFAULT CURRENT\_TIMESTAMP
-> );
-
-> \-- Tabela de perfis (profiles)
-> CREATE TABLE IF NOT EXISTS profiles (
-> user\_id INT PRIMARY KEY,
-> data\_nascimento DATE,
-> foto\_perfil VARCHAR(255),
-> FOREIGN KEY (user\_id) REFERENCES users(id) ON DELETE CASCADE
-> );
 >
-> ```
+> \-- Usar o banco de dados recém-criado
+> ```sql
+>   USE nodejs_auth_db;
+>```
+>
+> \-- Tabela de usuários (users)
+> ```sql
+>   CREATE TABLE IF NOT EXISTS users (
+>       id INT AUTO_INCREMENT PRIMARY KEY,
+>       username VARCHAR(255) NOT NULL UNIQUE,
+>       password VARCHAR(255) NOT NULL,
+>       email VARCHAR(255) NOT NULL UNIQUE,
+>       telefone VARCHAR(100),
+>       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+>   );
+>```
+>
+> \-- Tabela de perfis (profiles)
+> ```sql
+>   CREATE TABLE IF NOT EXISTS profiles (
+>       user_id INT PRIMARY KEY,
+>       data_nascimento DATE,
+>       foto_perfil VARCHAR(255),
+>       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+>   );
 > ```
 
 -----
