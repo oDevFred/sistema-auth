@@ -110,7 +110,7 @@ Este manual fornece instruções passo a passo para utilizar o sistema de cadast
 
 ##### **1. Tela de Cadastro**
 
-  ![cadastro](https://media.discordapp.net/attachments/1333279562557161523/1379228043066740926/image.png?ex=683f79b6&is=683e2836&hm=41fa0b6a0dfda9386df03c285ebd9ae9d0f8928892b52f412983258d1bab66e4&=&format=webp&quality=lossless&width=1103&height=544)
+  ![cadastro](https://cdn.discordapp.com/attachments/1333279562557161523/1379240301310247034/Screenshot_2025-06-02_at_20-28-11_Cadastro_de_Usuario.png?ex=683f8520&is=683e33a0&hm=d83910f93365de3bea363ebecb692b452474251d399502bc7d73b16cf9e9a481&)
 
 **Código Frontend (`public/register.html` - Trecho principal do formulário e script):**
 
@@ -248,7 +248,7 @@ app.post('/register', async (req, res) => {
 
 ##### **2. Tela de Login**
 
-  ![cadastro](https://media.discordapp.net/attachments/1333279562557161523/1379228304967471184/image.png?ex=683f79f4&is=683e2874&hm=9440143fdccbc110494f33fd04ccbcf4a2e068871aaca565eed943ccc4b1f405&=&format=webp&quality=lossless&width=1106&height=544)
+  ![cadastro](https://cdn.discordapp.com/attachments/1333279562557161523/1379240395510120458/Screenshot_2025-06-02_at_20-28-46_Login_de_Usuario.png?ex=683f8537&is=683e33b7&hm=974488d0481775bd90319a47b8b994b0740d991dd2b984cca3e4bd43f20ad01f&)
 
 **Código Frontend (`public/login.html` - Trecho principal do formulário e script):**
 
